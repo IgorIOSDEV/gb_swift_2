@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var logo: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -25,20 +25,19 @@ class ViewController: UIViewController {
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
     
-    
-    
-    @objc func keyboardWasShown(notification: Notification) {
+   @objc func keyboardWasShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
         self.scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
+        scrollView.scrollRectToVisible(singInButton.frame, animated: true)
     }
     
     
     @objc func keyboardWillBeHidden(notification: Notification) {
         let contentInsets = UIEdgeInsets.zero
-        scrollView?.contentInset = contentInsets
+        scrollView.contentInset = contentInsets
     }
     
     
@@ -52,20 +51,27 @@ class ViewController: UIViewController {
         self.scrollView?.endEditing(true)
     }
     
-    
-    
-    @IBAction func loginButtonPress(_ sender: Any) {
-        let login = loginField.text!
-        let password = passwordField.text!
-        if login == "aaa" && password == "000" {
-            print("Авторизация успешная")
-        } else {
-            print("Неуспешная авторизация")
-            
-        }
-        
+    //проверяем авторизацию
+    func checkAuth() -> Bool {
+        return (loginField.text == "aaa") && (passwordField.text == "000")
     }
-
+    
+   //сообщение об ошибке авторизации
+    func showAuthError() {
+        let alertVC = UIAlertController(title: "Ошибка", message: "Введите корректные логин и пароль", preferredStyle: .alert)
+        let okAktion = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertVC.addAction(okAktion)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "mainScreenID" && checkAuth(){
+            return true
+        } else {
+            showAuthError()
+            return false
+        }
+    }
 }
     
 

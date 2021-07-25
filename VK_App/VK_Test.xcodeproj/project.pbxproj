@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		E18CBD2626A54C530038233F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CBD2526A54C530038233F /* AppDelegate.swift */; };
 		E18CBD2826A54C530038233F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CBD2726A54C530038233F /* SceneDelegate.swift */; };
-		E18CBD2A26A54C530038233F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CBD2926A54C530038233F /* ViewController.swift */; };
+		E18CBD2A26A54C530038233F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CBD2926A54C530038233F /* LoginViewController.swift */; };
 		E18CBD2D26A54C530038233F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18CBD2B26A54C530038233F /* Main.storyboard */; };
 		E18CBD2F26A54C540038233F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18CBD2E26A54C540038233F /* Assets.xcassets */; };
 		E18CBD3226A54C540038233F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18CBD3026A54C540038233F /* LaunchScreen.storyboard */; };
 		E18CBD3D26A54C540038233F /* VK_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CBD3C26A54C540038233F /* VK_AppTests.swift */; };
 		E18CBD4826A54C540038233F /* VK_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CBD4726A54C540038233F /* VK_AppUITests.swift */; };
+		E1F377B326AD9DF400DD868F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F377B226AD9DF400DD868F /* FriendsViewController.swift */; };
+		E1F377B526AD9F7600DD868F /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F377B426AD9F7600DD868F /* FriendsTableViewCell.swift */; };
+		E1F377B826ADB87500DD868F /* FriendsImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F377B726ADB87500DD868F /* FriendsImagesViewController.swift */; };
+		E1F377BB26ADBBCE00DD868F /* FriendsImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F377BA26ADBBCE00DD868F /* FriendsImagesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 		E18CBD2226A54C530038233F /* VK_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18CBD2526A54C530038233F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18CBD2726A54C530038233F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E18CBD2926A54C530038233F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E18CBD2926A54C530038233F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E18CBD2C26A54C530038233F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E18CBD2E26A54C540038233F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E18CBD3126A54C540038233F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		E18CBD4326A54C540038233F /* VK_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VK_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18CBD4726A54C540038233F /* VK_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_AppUITests.swift; sourceTree = "<group>"; };
 		E18CBD4926A54C540038233F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F377B226AD9DF400DD868F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		E1F377B426AD9F7600DD868F /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		E1F377B726ADB87500DD868F /* FriendsImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsImagesViewController.swift; sourceTree = "<group>"; };
+		E1F377BA26ADBBCE00DD868F /* FriendsImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E147256E26ADD01F00071FCB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E18CBD1926A54C530038233F = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +114,9 @@
 		E18CBD2426A54C530038233F /* VK_App */ = {
 			isa = PBXGroup;
 			children = (
+				E1F377A726AD7ECF00DD868F /* Scenes */,
 				E18CBD2526A54C530038233F /* AppDelegate.swift */,
 				E18CBD2726A54C530038233F /* SceneDelegate.swift */,
-				E18CBD2926A54C530038233F /* ViewController.swift */,
 				E18CBD2B26A54C530038233F /* Main.storyboard */,
 				E18CBD2E26A54C540038233F /* Assets.xcassets */,
 				E18CBD3026A54C540038233F /* LaunchScreen.storyboard */,
@@ -126,6 +141,67 @@
 				E18CBD4926A54C540038233F /* Info.plist */,
 			);
 			path = VK_AppUITests;
+			sourceTree = "<group>";
+		};
+		E1F377A726AD7ECF00DD868F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E1F377B626ADB7EA00DD868F /* FriendsImages */,
+				E1F377AA26AD7F5D00DD868F /* Friends */,
+				E1F377A926AD7F3300DD868F /* Group */,
+				E1F377A826AD7EE100DD868F /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E1F377A826AD7EE100DD868F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E18CBD2926A54C530038233F /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E1F377A926AD7F3300DD868F /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				E147256E26ADD01F00071FCB /* Cells */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		E1F377AA26AD7F5D00DD868F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				E1F377AF26AD876F00DD868F /* Cells */,
+				E1F377B226AD9DF400DD868F /* FriendsViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		E1F377AF26AD876F00DD868F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E1F377B426AD9F7600DD868F /* FriendsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E1F377B626ADB7EA00DD868F /* FriendsImages */ = {
+			isa = PBXGroup;
+			children = (
+				E1F377B926ADBB6F00DD868F /* Cells */,
+				E1F377B726ADB87500DD868F /* FriendsImagesViewController.swift */,
+			);
+			path = FriendsImages;
+			sourceTree = "<group>";
+		};
+		E1F377B926ADBB6F00DD868F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E1F377BA26ADBBCE00DD868F /* FriendsImagesCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +282,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E18CBD1D26A54C530038233F /* Build configuration list for PBXProject "VK_App" */;
+			buildConfigurationList = E18CBD1D26A54C530038233F /* Build configuration list for PBXProject "VK_Test" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -258,8 +334,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E18CBD2A26A54C530038233F /* ViewController.swift in Sources */,
+				E1F377B326AD9DF400DD868F /* FriendsViewController.swift in Sources */,
+				E18CBD2A26A54C530038233F /* LoginViewController.swift in Sources */,
 				E18CBD2626A54C530038233F /* AppDelegate.swift in Sources */,
+				E1F377BB26ADBBCE00DD868F /* FriendsImagesCollectionViewCell.swift in Sources */,
+				E1F377B526AD9F7600DD868F /* FriendsTableViewCell.swift in Sources */,
+				E1F377B826ADB87500DD868F /* FriendsImagesViewController.swift in Sources */,
 				E18CBD2826A54C530038233F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,7 +630,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E18CBD1D26A54C530038233F /* Build configuration list for PBXProject "VK_App" */ = {
+		E18CBD1D26A54C530038233F /* Build configuration list for PBXProject "VK_Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E18CBD4A26A54C540038233F /* Debug */,
