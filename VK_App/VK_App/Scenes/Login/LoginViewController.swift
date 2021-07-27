@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
     
     //проверяем авторизацию
     func checkAuth() -> Bool {
-        return (loginField.text == "aaa") && (passwordField.text == "000")
+        return (loginField.text == "") && (passwordField.text == "")
     }
     
    //сообщение об ошибке авторизации

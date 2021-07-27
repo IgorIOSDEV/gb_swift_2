@@ -9,4 +9,6 @@ import UIKit
 
 class FriendsImagesCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var collectionImage: UIImageView!
+    
 }
