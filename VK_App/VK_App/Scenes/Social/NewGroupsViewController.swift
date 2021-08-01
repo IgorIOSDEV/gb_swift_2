@@ -10,7 +10,6 @@ import UIKit
 class NewGroupsViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet var tableView: UITableView!
-    
     // MARK: Properties
     private let newID = "NewGroupsID"
     ///массив с группами

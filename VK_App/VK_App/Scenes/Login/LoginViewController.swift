@@ -9,18 +9,20 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var logo: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var loginField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var singInButton: UIButton!
+    @IBOutlet var logo: UILabel!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var loginField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var singInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        logo.layer.cornerRadius = 11
+        logo.layer.masksToBounds = true
         singInButton.layer.cornerRadius = 11
         loginField.layer.cornerRadius = 11
         passwordField.layer.cornerRadius = 11
-        
+    
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
     }

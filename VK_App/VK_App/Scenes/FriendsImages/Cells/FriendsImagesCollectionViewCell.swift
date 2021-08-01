@@ -9,6 +9,11 @@ import UIKit
 
 class FriendsImagesCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var collectionImage: UIImageView!
+    let identifier = "FriendsImagesCollectionViewCell"
+   
+    @IBOutlet private var collectionImage: UIImageView!
     
+    func configure(_ u: FriendImagesModel) {
+    collectionImage.image = UIImage(named: u.images)
+    }
 }

@@ -9,9 +9,13 @@ import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
 
-    @IBOutlet var friendImage: UIImageView!
+    @IBOutlet private var friendImage: UIImageView!
+    @IBOutlet private var friendName: UILabel!
+    let identifier = "FriendsImagesCollectionViewCell"
     
-    @IBOutlet var friendName: UILabel!
-    
-
+    //MARK  Methods
+    func configure(with friend: User) {
+        friendName.text = friend.name
+        friendImage.image = friend.image
+    }
 }

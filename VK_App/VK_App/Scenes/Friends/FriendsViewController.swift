@@ -8,19 +8,26 @@
 import UIKit
 
 class FriendsViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        friendsTableView.separatorStyle = .none
+    }
     //MARk: - Outlets
     @IBOutlet var friendsTableView: UITableView!
     // MARK: - Properties
-    private let cellID = "FriendsTableViewCell"
-    /// массив с именами и картинками
-    var users = [User(name: "Исаак Ньютон", image: UIImage(named: "1_Newton")),
-                 User(name: "Альберт Эйншьтейн", image:UIImage(named: "2_einstein")),
-                 User(name: "Джеймс Максвелл", image:UIImage(named: "3_Makswell")),
-                 User(name: "Луи Пастер", image:UIImage(named: "4_Paster")),
-                 User(name: "Чарльз Дарвин", image:UIImage(named: "5_Darvin")),
-                 User(name: "Никола Тесла", image:UIImage(named: "6_Tesla")),
-                 User(name: "Нильс Бор", image:UIImage(named: "7_Bor"))]
+    var users = UserStorage.shared.users
+
+   private let cellID = "FriendsTableViewCell"
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showImages",
+           let destinationController = segue.destination as? FriendsImagesViewController,
+           let indexSelectionCell = friendsTableView.indexPathForSelectedRow {
+            let friend = users[indexSelectionCell.row]
+            destinationController.images = friend.images
+        }
+    }
 }
 
 extension FriendsViewController: UITableViewDataSource {
@@ -30,11 +37,9 @@ extension FriendsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? FriendsTableViewCell else {
-            fatalError("{ Message: Error in dequeue FriendsTableViewCell }")
+            fatalError("{ Message: Error in dequeue \(cellID) }")
         }
-        
-        cell.friendName.text = users[indexPath.row].name
-        cell.friendImage.image = users[indexPath.row].image
+        cell.configure(with: users[indexPath.row])
         return cell
     }
 }

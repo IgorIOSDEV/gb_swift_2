@@ -16,9 +16,7 @@ class CurrentGroupsViewController: UIViewController {
     ///массив с группами
     var groups = [Group(name: "Первая группа", image: UIImage(named: "1_Group")),
                   Group(name: "Вторая группа", image:UIImage(named: "2_Group")),
-                  Group(name: "Третья группа", image:UIImage(named: "3_Group")),
-                  Group(name: "Четвертая группа", image:UIImage(named: "4_Group")),
-                  Group(name: "Пятая группа", image:UIImage(named: "5_Group"))]
+                  Group(name: "Третья группа", image:UIImage(named: "3_Group"))]
 
     @IBAction func goBackFromAvalibleScreen(with seque: UIStoryboardSegue) {
         guard let avalibleVC = seque.source as? NewGroupsViewController,
