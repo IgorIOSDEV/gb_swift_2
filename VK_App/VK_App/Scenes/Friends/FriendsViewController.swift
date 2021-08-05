@@ -9,10 +9,7 @@ import UIKit
 
 class FriendsViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        friendsTableView.separatorStyle = .none
-    }
+    
     //MARk: - Outlets
     @IBOutlet var friendsTableView: UITableView!
     // MARK: - Properties
