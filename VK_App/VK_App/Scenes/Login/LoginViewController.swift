@@ -9,11 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet var logo: UILabel!
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var loginField: UITextField!
-    @IBOutlet var passwordField: UITextField!
-    @IBOutlet var singInButton: UIButton!
+    @IBOutlet weak var logo: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var singInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

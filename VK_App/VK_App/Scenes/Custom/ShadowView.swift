@@ -22,49 +22,48 @@ extension UIView {
     }
 }
 
-    @IBDesignable public class ShadowView: UIView {
-        var image: UIImage?
+    @IBDesignable class ShadowView: UIView {
     
-    init(size: CGFloat = 60, shadowRadius: CGFloat = 4.0, shadowOpacity: CGFloat = 0.5, shadowColor: UIColor = UIColor.black){
-        super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
+    @IBInspectable var shadowColor: UIColor = .black {
+        didSet {
+            updateShadowColor()
+        }
+    }
+    
+    @IBInspectable var shadowRadius: CGFloat = 0 {
+        didSet {
+            updateShadowRadius()
+        }
     }
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
     }
     
-    @IBInspectable var shadowRadius: CGFloat = 4.0 {
-        didSet {setNeedsLayout()
-        }
-    }
-    
-    @IBInspectable var shadowOpacity: Float = 0.5 {
-        didSet {setNeedsLayout()
-        }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: bounds.width / 2).cgPath
+        
     }
 
-    @IBInspectable var shadowColor: UIColor = UIColor.black {
-        didSet {setNeedsLayout()
-        }
+    private func commonInit() {
+        updateShadowColor()
+        updateShadowRadius()
+        layer.shadowOpacity = 1
+        layer.shadowOffset = .zero
     }
     
-        override public func layoutSubviews() {
-            super.layoutSubviews()
-            
-            let imageContent = UIImageView()
-            imageContent.image = image
-            imageContent.frame = bounds.insetBy(dx: 15, dy: 15)
-            imageContent.layer.cornerRadius = imageContent.bounds.width / 2
-            imageContent.clipsToBounds = true
-            addSubview(imageContent)
-            
-            backgroundColor = UIColor.clear
-            layer.cornerRadius = bounds.width / 2
-            
-            addShadow(offset: CGSize(width: 0, height: 0), color: shadowColor, radius: shadowRadius, opacity: shadowOpacity)
-        }
+    private func updateShadowColor() {
+        layer.shadowColor = shadowColor.cgColor
     }
-
+    
+    private func updateShadowRadius() {
+        layer.shadowRadius = shadowRadius
+    }
+}
+   
