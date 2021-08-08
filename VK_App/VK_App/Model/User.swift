@@ -16,10 +16,10 @@ struct UserStorage {
     
     static let shared = UserStorage()
     
-    var users: [User]
+    var friends: [User]
    
     private init() {
-        users = [User(name: "Исаак Ньютон", image:UIImage(named:"1_Newton"), images: [FriendImagesModel( images :"1_Newton")]),
+        friends = [User(name: "Исаак Ньютон", image:UIImage(named:"1_Newton"), images: [FriendImagesModel( images :"1_Newton")]),
                  User(name: "Альберт Эйншьтейн", image:UIImage(named: "2_einstein"), images: [FriendImagesModel( images :"2_einstein")]),
                  User(name: "Джеймс Максвелл", image:UIImage(named: "3_Makswell"), images: [FriendImagesModel( images :"3_Makswell")]),
                  User(name: "Луи Пастер", image:UIImage(named: "4_Paster"), images: [FriendImagesModel( images :"4_Paster")]),
