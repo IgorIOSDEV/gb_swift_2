@@ -14,9 +14,6 @@ class FriendsImagesViewController: UIViewController {
     private var resuseID = "FriendsImagesCollectionViewCell"
     
     var images: [FriendImagesModel] = []
-    
-    
-    
 }
 
 extension FriendsImagesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
