@@ -13,4 +13,5 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet var textNews: UILabel!
     @IBOutlet var ImgNews: UIImageView!
 
+    
 }
