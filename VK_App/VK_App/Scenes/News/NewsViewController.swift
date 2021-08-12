@@ -12,9 +12,6 @@ class NewsViewController: UIViewController {
     @IBOutlet var NewsTableView: UITableView!
     private var newsID = "NewsTableViewCell"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     var newsList = [
         PostNews(avatar:UIImage(named:"person1"), name: "Ваня Чехов", textNews: "Во Франции около 237 000 человек вышли на общенациональный протест против COVID-сертификатов и обязательной вакцинации медработников. Об этом сообщает DW.", textImage: UIImage(named: "news_1")),

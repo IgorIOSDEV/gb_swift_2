@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhS-42-ExK">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -9,6 +9,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Loading Screen-->
+        <scene sceneID="hp3-Eb-H1I">
+            <objects>
+                <viewController id="bhS-42-ExK" customClass="LoadingScreen" customModule="VK_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ocO-0v-vlT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7p-0G-CUK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yij-jI-upK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yij-jI-upK" firstAttribute="bottom" secondItem="c7p-0G-CUK" secondAttribute="bottom" id="5Cn-WH-wUF"/>
+                            <constraint firstItem="c7p-0G-CUK" firstAttribute="top" secondItem="yij-jI-upK" secondAttribute="top" id="auD-Ui-572"/>
+                            <constraint firstItem="yij-jI-upK" firstAttribute="trailing" secondItem="c7p-0G-CUK" secondAttribute="trailing" id="i3d-1R-TFW"/>
+                            <constraint firstItem="c7p-0G-CUK" firstAttribute="leading" secondItem="yij-jI-upK" secondAttribute="leading" id="z9i-TX-lBz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AnimationView" destination="c7p-0G-CUK" id="htd-Nw-FzE"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="log" modalPresentationStyle="fullScreen" id="Onu-aP-tVy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="De8-D3-P4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1004" y="88"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -125,6 +156,7 @@
                             <constraint firstItem="NRI-Zi-x9r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vgH-BD-MVw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nPZ-bP-0JS"/>
                     <connections>
                         <outlet property="loginField" destination="MR6-ML-p3l" id="nw7-k1-XaW"/>
                         <outlet property="logo" destination="VFt-RZ-MSh" id="8Iw-9q-WWe"/>
@@ -273,16 +305,21 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-rh-9uE">
+                                                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-rh-9uE">
                                                     <rect key="frame" x="20" y="131.33333333333337" width="374" height="385"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WCa-1w-7H6">
-                                                            <rect key="frame" x="5" y="5" width="364" height="340"/>
+                                                            <rect key="frame" x="5" y="5" width="340" height="340"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="340" id="WF3-ai-Cqt"/>
+                                                                <constraint firstAttribute="height" priority="999" constant="340" id="WF3-ai-Cqt"/>
                                                                 <constraint firstAttribute="width" priority="999" constant="340" id="heO-J6-Vn3"/>
                                                                 <constraint firstAttribute="width" secondItem="WCa-1w-7H6" secondAttribute="height" multiplier="1:1" priority="999" id="zgd-DK-VZJ"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="6"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gx4-ea-Mdy" customClass="LikeButton" customModule="VK_App" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="350" width="46" height="30"/>
@@ -296,13 +333,16 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="WCa-1w-7H6" firstAttribute="leading" secondItem="JdT-rh-9uE" secondAttribute="leading" constant="5" id="5mw-BQ-c2m"/>
-                                                        <constraint firstItem="gx4-ea-Mdy" firstAttribute="leading" secondItem="JdT-rh-9uE" secondAttribute="leading" constant="5" id="BdC-HL-Yb4"/>
-                                                        <constraint firstItem="WCa-1w-7H6" firstAttribute="top" secondItem="JdT-rh-9uE" secondAttribute="top" constant="5" id="FrQ-Bi-u8a"/>
-                                                        <constraint firstAttribute="trailing" secondItem="WCa-1w-7H6" secondAttribute="trailing" constant="5" id="SS0-Ib-Yii"/>
-                                                        <constraint firstItem="gx4-ea-Mdy" firstAttribute="top" secondItem="WCa-1w-7H6" secondAttribute="bottom" constant="5" id="Z6i-wL-JJJ"/>
+                                                        <constraint firstItem="gx4-ea-Mdy" firstAttribute="leading" secondItem="JdT-rh-9uE" secondAttribute="leading" priority="999" constant="5" id="BdC-HL-Yb4"/>
+                                                        <constraint firstItem="WCa-1w-7H6" firstAttribute="top" secondItem="JdT-rh-9uE" secondAttribute="top" priority="999" constant="5" id="FrQ-Bi-u8a"/>
+                                                        <constraint firstAttribute="width" constant="374" id="NFl-pF-NJk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="WCa-1w-7H6" secondAttribute="trailing" priority="999" constant="5" id="SS0-Ib-Yii"/>
+                                                        <constraint firstAttribute="width" secondItem="JdT-rh-9uE" secondAttribute="height" multiplier="1:1" priority="999" id="TP0-c3-mIN"/>
+                                                        <constraint firstItem="gx4-ea-Mdy" firstAttribute="top" secondItem="WCa-1w-7H6" secondAttribute="bottom" priority="999" constant="5" id="Z6i-wL-JJJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="gx4-ea-Mdy" secondAttribute="bottom" constant="5" id="azC-TV-JOO"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gx4-ea-Mdy" secondAttribute="trailing" constant="20" symbolic="YES" id="cjJ-Tz-4I3"/>
-                                                        <constraint firstItem="gx4-ea-Mdy" firstAttribute="top" secondItem="WCa-1w-7H6" secondAttribute="bottom" constant="5" id="zSr-WQ-e9L"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gx4-ea-Mdy" secondAttribute="trailing" priority="999" constant="20" symbolic="YES" id="cjJ-Tz-4I3"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="385" id="h0e-K0-au2"/>
+                                                        <constraint firstItem="gx4-ea-Mdy" firstAttribute="top" secondItem="WCa-1w-7H6" secondAttribute="bottom" priority="999" constant="5" id="zSr-WQ-e9L"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameUser" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-8b-d3u">
@@ -319,16 +359,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="JdT-rh-9uE" secondAttribute="trailing" id="5a5-x9-BtK"/>
                                                 <constraint firstItem="Bht-JH-jyz" firstAttribute="leading" secondItem="WCX-Vb-ibm" secondAttribute="leadingMargin" constant="10" id="7BH-Tm-gcE"/>
                                                 <constraint firstItem="Bht-JH-jyz" firstAttribute="top" secondItem="WCX-Vb-ibm" secondAttribute="topMargin" constant="10" id="92w-zI-GY2"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="JdT-rh-9uE" secondAttribute="bottom" constant="10" id="NlI-2d-d67"/>
+                                                <constraint firstItem="JdT-rh-9uE" firstAttribute="leading" secondItem="WCX-Vb-ibm" secondAttribute="leadingMargin" id="9jp-gW-YQa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JdT-rh-9uE" secondAttribute="bottom" priority="999" constant="10" id="NlI-2d-d67"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cnr-YQ-O78" secondAttribute="trailing" constant="10" id="NoK-TE-HaN"/>
                                                 <constraint firstItem="cnr-YQ-O78" firstAttribute="top" secondItem="Bht-JH-jyz" secondAttribute="bottom" constant="22" id="PBX-PC-3PY"/>
+                                                <constraint firstItem="JdT-rh-9uE" firstAttribute="trailing" secondItem="WCX-Vb-ibm" secondAttribute="trailingMargin" priority="999" id="Pkc-gR-ato"/>
                                                 <constraint firstItem="Ise-8b-d3u" firstAttribute="leading" secondItem="Bht-JH-jyz" secondAttribute="trailing" constant="15" id="aR0-JR-Z9G"/>
                                                 <constraint firstItem="cnr-YQ-O78" firstAttribute="leading" secondItem="WCX-Vb-ibm" secondAttribute="leadingMargin" constant="10" id="dOM-EY-Vu1"/>
-                                                <constraint firstItem="JdT-rh-9uE" firstAttribute="leading" secondItem="WCX-Vb-ibm" secondAttribute="leadingMargin" id="iVh-Wj-ejw"/>
-                                                <constraint firstItem="JdT-rh-9uE" firstAttribute="top" secondItem="cnr-YQ-O78" secondAttribute="bottom" constant="10" id="lYf-lj-KGk"/>
+                                                <constraint firstItem="JdT-rh-9uE" firstAttribute="top" secondItem="cnr-YQ-O78" secondAttribute="bottom" priority="999" constant="10" id="lYf-lj-KGk"/>
                                                 <constraint firstItem="Ise-8b-d3u" firstAttribute="top" secondItem="Bht-JH-jyz" secondAttribute="bottom" constant="-40" id="oca-bc-gdi"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ise-8b-d3u" secondAttribute="trailing" constant="10" id="wBG-Kj-naP"/>
                                             </constraints>
@@ -618,12 +658,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="600"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vMS-h7-zdx">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vMS-h7-zdx">
                                                     <rect key="frame" x="10" y="100" width="350" height="350"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="350" id="4on-Hv-dNx"/>
                                                         <constraint firstAttribute="width" secondItem="vMS-h7-zdx" secondAttribute="height" multiplier="1:1" priority="999" id="KBd-Gw-Ob3"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRa-gq-bpu" customClass="LikeButton" customModule="VK_App" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="455" width="45" height="30"/>
